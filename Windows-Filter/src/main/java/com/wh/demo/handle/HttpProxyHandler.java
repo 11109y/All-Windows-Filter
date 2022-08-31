@@ -1,4 +1,3 @@
-/*
 package com.wh.demo.handle;
 
 import io.netty.channel.ChannelFuture;
@@ -14,16 +13,16 @@ import io.netty.handler.codec.http.HttpVersion;
 import io.netty.util.ReferenceCountUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 
-*/
 /**
  * WindowsFilter
  *
  * @author : 张宇健
  * @date : 2022-08-30 18:30
- **//*
-
+ **/
+@Component
 public class HttpProxyHandler extends ChannelInboundHandlerAdapter implements IProxyHandler {
     private Logger logger = LoggerFactory.getLogger(HttpProxyHandler.class);
 
@@ -61,15 +60,13 @@ public class HttpProxyHandler extends ChannelInboundHandlerAdapter implements IP
         super.channelRead(ctx, msg);
     }
 
-    */
-/**
+    /**
      * 如果是connect请求的话，返回连接建立成功
      *
      * @param ctx        ChannelHandlerContext
      * @param methodName 请求类型名
      * @return 是否为connect请求
-     *//*
-
+     */
     private boolean sendSuccessResponseIfConnectMethod(ChannelHandlerContext ctx, String methodName) {
         if (Constans.CONNECT_METHOD_NAME.equalsIgnoreCase(methodName)) {
             //代理建立成功
@@ -124,4 +121,3 @@ public class HttpProxyHandler extends ChannelInboundHandlerAdapter implements IP
 
     }
 }
-*/
